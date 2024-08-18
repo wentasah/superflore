@@ -88,6 +88,7 @@ setup(
             'superflore-gen-oe-recipes = superflore.generators.bitbake:main',
             'superflore-gen-nix = superflore.generators.nix:main',
             'superflore-check-ebuilds = superflore.test_integration.gentoo:main',
+            'ros2nix = ros2nix.ros2nix:main',
         ]
     }
 )
