@@ -23,7 +23,6 @@ from superflore.generators.nix.gen_packages import regenerate_pkg, \
     regenerate_pkg_set
 from superflore.generators.nix.nix_ros_overlay import NixRosOverlay
 from superflore.parser import get_parser
-from superflore.repo_instance import RepoInstance
 from superflore.TempfileManager import TempfileManager
 from superflore.utils import clean_up, get_distros_by_status
 from superflore.utils import err
@@ -59,7 +58,7 @@ def main():
         if not args.output_repository_path:
             parser.error('Invalid args! no repository specified')
         try:
-            prev_overlay = RepoInstance(args.output_repository_path, False)
+            prev_overlay = NixRosOverlay(args.output_repository_path, False)
             msg, title = load_pr()
             prev_overlay.pull_request(msg, title=title)
             clean_up()
