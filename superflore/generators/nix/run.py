@@ -58,7 +58,11 @@ def main():
         if not args.output_repository_path:
             parser.error('Invalid args! no repository specified')
         try:
-            prev_overlay = NixRosOverlay(args.output_repository_path, False)
+            prev_overlay = NixRosOverlay(
+                args.output_repository_path,
+                False,
+                from_branch=args.upstream_branch,
+            )
             msg, title = load_pr()
             prev_overlay.pull_request(msg, title=title)
             clean_up()
