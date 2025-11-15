@@ -78,17 +78,17 @@ def regenerate_pkg(
 
     try:
         derivation_text = current.derivation.get_text(org, org_license)
-    except UnresolvedDependency:
-        err("'Failed to resolve required dependencies for package {}!".format(pkg))
         unresolved = current.unresolved_dependencies
         for dep in unresolved:
             err(' unresolved: "{}"'.format(dep))
-        return None, unresolved, None
     except Exception as e:
         err('Failed to generate derivation for package {}!'.format(pkg))
         raise e
 
-    ok("Successfully generated derivation for package '{}'.".format(pkg))
+    if len(unresolved) == 0:
+        ok("Successfully generated derivation for package '{}'.".format(pkg))
+    else:
+        warn("Generated derivation for package '{}' has unresolved dependencies.".format(pkg))
     try:
         with open('{0}'.format(package_file), 'w') as recipe_file:
             recipe_file.write(derivation_text)

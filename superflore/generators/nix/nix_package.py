@@ -153,7 +153,7 @@ class NixPackage:
             )
         except UnresolvedDependency:
             self.unresolved_dependencies.add(d)
-            return tuple()
+            return (f"_unresolved_{d}",)
 
     @staticmethod
     def _get_ros_version(distro):
@@ -190,7 +190,4 @@ class NixPackage:
 
     @property
     def derivation(self):
-        if self.unresolved_dependencies:
-            raise UnresolvedDependency('failed to resolve dependencies!')
-
         return self._derivation
