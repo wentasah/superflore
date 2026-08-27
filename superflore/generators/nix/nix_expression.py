@@ -64,8 +64,12 @@ class NixLicense:
         'BSD-License-2.0': 'bsd3', # In teleop_twist_keyboard, BSD-License-2.0 is almost exactly bsd3. The only difference is use of "copyright owner" instead of "copyright holder".
         'BSL-1.0': 'boost',
         'Boost-1.0': 'boost',
+        'CC-BY-NC-ND-4.0': 'cc-by-nc-nd-40',
+        'CC-BY-NC-SA-3.0': 'cc-by-nc-sa-30',
         'CC-BY-NC-SA-4.0': 'cc-by-nc-sa-40',
+        'CC-BY-SA-4.0': 'cc-by-sa-40',
         'CC0': 'cc0',
+        'CC0-1.0': 'cc0',
         'EPL-2.0': 'epl20',
         'Eclipse-Distribution-License-1.0': 'bsd3', # see https://www.eclipse.org/org/documents/edl-v10/
         'GPL-1': 'gpl1',
@@ -86,6 +90,7 @@ class NixLicense:
         'LGPL-3.0-only': 'lgpl3Only',
         'LGPL-v3': 'lgpl3Only',
         'MIT': 'mit',
+        'MIT-0': 'mit0',
         'MPL-1.0': 'mpl10',
         'MPL-1.1': 'mpl11',
         'MPL-2.0': 'mpl20',
