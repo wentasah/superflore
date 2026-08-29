@@ -50,7 +50,7 @@ class NixLicense:
         'ASL 2.0': 'asl20',
         'Apache-2': 'asl20',
         'Apache-2.0': 'asl20',
-        'Apache-2.0-License': 'apl20',
+        'Apache-2.0-License': 'asl20',
         'Apache-Licence-2.0': 'asl20',
         'Apache-license-2.0': 'asl20',
         'BSD': 'bsdOriginal',
